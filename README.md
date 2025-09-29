@@ -1,2 +1,2 @@
-# Prometheus_Grafana_Course
-Meu aprendizado relacionado a observabilidade e monitoramento utilizando Prometheus e Grafana 
+# CourseGrafProm
+ A repository to show my first steps in monitoring and observability using Prometheus and Grafana
