@@ -1,11 +1,10 @@
 
-
 services:
   prometheus:
    image: prom/prometheus
    container_name: prometheus
    networks:
-     - monitoring
+     - devops-infra
    ports:
      - "9091:9090"
    volumes:
@@ -15,19 +14,21 @@ services:
    image: grafana/grafana
    container_name: grafana
    networks:
-     - monitoring
+     - devops-infra
    ports:
      - "9090:3000"
 
   node_app:
     build: .
     container_name: node_app
-    ports:
-      - 3000:3000
     networks:
-      - monitoring
+     - devops-infra
+    ports:
+     - 3000:3000
+
 
 
 networks:
-  monitoring:
-    driver: bridge 
+  devops-infra:
+   external: true
+     
